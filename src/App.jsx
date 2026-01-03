@@ -4,8 +4,16 @@ import Footer from "./components/footer";
 import Home from "./pages/home";
 import Cart from "./pages/cart";
 import Restaurent from "./pages/restaurent";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getRestaurants } from "./redux/actions/restActions";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRestaurants());
+  });
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
