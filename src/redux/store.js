@@ -7,6 +7,7 @@ const rootReducer = combineReducers({
   basket: basketReducer,
   restaurant: restaurantReducer,
 });
+
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
